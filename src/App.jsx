@@ -1,33 +1,61 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
+import PostForm from './components/PostForm'
+import PostList from './components/PostList'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      author:'john',
+      content:'Premier Post',
+      date:new Date().toLocaleString(),
+      UPVotes:0,
+      DOWNVoted:0
+    },
+    {
+      id: 2,
+      autor:'john',
+      content:'Deuxieme Post',
+      date:new Date().toLocaleString(),
+      UPVotes:0,
+      DOWNVoted:0
+    }
+  ]);
+  const addPost = (newPost) => {
+    setPosts([newPost, ...posts]);
+  }
+  const UPVotePost = (postId) => {
+    setPosts(posts.map(post => 
+      post.id === postId 
+      ? { ...post, UPVotes: post.UPVotes + 1 } : post
+    ));
+  };
+  const DOWNVotePost = (postId) => {
+    setPosts(posts.map(post => 
+      post.id === postId 
+      ? { ...post, DOWNVoted: post.DOWNVoted + 1 } : post
+    ));
+  };
+  const deletePost = (postId) => {
+    setPosts(posts.filter(post => post.id !== postId));
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="app">
+      {Header()}
+      <PostForm onAddPost={addPost} />
+      <PostList 
+        posts={posts}  
+        onUPVote={UPVotePost} 
+        onDOWNVote={DOWNVotePost}
+        onDelete={deletePost} 
+      />
+    </div>
+  
     </>
   )
 }
