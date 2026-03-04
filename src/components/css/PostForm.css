@@ -1,52 +1,61 @@
-.post-form{
+.post-form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    margin-bottom: 2em;
-
+    gap: 12px;
+    margin-bottom: 24px;
+    background-color: var(--color-bg-body);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
 }
-textarea {
-    text-decoration: none;
-    resize: vertical;
-    min-height: 80px;
-    padding: 0.5em;
-    font-size: 1em;
+
+.post-form textarea {
+    padding: 10px 12px;
+    font-size: 0.95em;
     font-family: inherit;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #2a2a2a;
+    color: var(--color-text-primary);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-surface);
+    transition: border-color 0.15s;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+}
+
+.post-form textarea::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.post-form textarea:focus {
+    outline: none;
+    border-color: var(--color-text-primary);
 }
 
 .post-title-input {
-    text-decoration: none;
-    resize: vertical;
-    min-height: 20px;
-    max-height: 20px;
-    padding: 0.5em;
+    min-height: 40px;
+    max-height: 40px;
+    font-weight: 600;
 }
 
 .post-content-input {
-    text-decoration: none;
-    resize: vertical;
-    min-height: 80px;
-    padding: 0.5em;
-    font-size: 1em;
+    min-height: 100px;
 }
 
-
 .post-submit-button {
-    border-radius: 100px;
-    border: 1px solid transparent;
-    
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
+    align-self: flex-end;
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 8px 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--color-accent);
+    transition: background-color 0.15s;
 }
 
 .post-submit-button:hover {
-    color: #0d2a0a;
-    border-color: #147209;
-    background-color: #26990c;
+    background-color: var(--color-accent-hover);
 }

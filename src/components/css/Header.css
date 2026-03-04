@@ -1,18 +1,25 @@
-root{
---color-neutral-background: #0E1113;
---color-neutral-content: #B7CAD4;
---color-tone-1: #F2F2F2;
---color-tone-5: #1E1E1E;
---color-tone-7: #080808;
---color-ui-canvas: #080808;
-}
-
-
-.app-header{
+.app-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: var(--color-neutral-background);
-    color: var(--color-neutral-content);
+    gap: 12px;
+    padding: 12px 20px;
+    background-color: var(--color-bg-body);
+    border-bottom: 1px solid var(--color-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.app-header h1 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.5px;
+}
+
+.app-header .logo {
+    height: 2em;
 }

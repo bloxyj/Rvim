@@ -1,0 +1,15 @@
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.no-posts {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1em;
+    padding: 40px 16px;
+    background-color: var(--color-bg-body);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+}

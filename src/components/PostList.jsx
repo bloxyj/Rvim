@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from './Post';
+import './css/PostList.css';
 
 function TweetList({ posts, onUPVote, onDOWNVote, onDelete }) {
     return (
