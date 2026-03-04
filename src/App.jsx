@@ -10,17 +10,19 @@ function App() {
     {
       id: 1,
       author:'john',
+      title:'Premier Post',
       content:'Premier Post',
       date:new Date().toLocaleString(),
-      UPVotes:0,
+      UPVotes:10,
       DOWNVoted:0
     },
     {
       id: 2,
-      autor:'john',
+      author:'john',
+      title:'Deuxieme Post',
       content:'Deuxieme Post',
       date:new Date().toLocaleString(),
-      UPVotes:0,
+      UPVotes:67,
       DOWNVoted:0
     }
   ]);
@@ -36,7 +38,7 @@ function App() {
   const DOWNVotePost = (postId) => {
     setPosts(posts.map(post => 
       post.id === postId 
-      ? { ...post, DOWNVoted: post.DOWNVoted + 1 } : post
+      ? { ...post, DOWNVoted: post.DOWNVoted - 1 } : post
     ));
   };
   const deletePost = (postId) => {

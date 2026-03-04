@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from 'react'
-
+import './css/PostForm.css';
 
 function PostForm({ onAddPost }) {
     const [title, setTitle] = useState('');
@@ -8,6 +8,7 @@ function PostForm({ onAddPost }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (title.trim() === '') return;
         if (content.trim() === '') return;
 
         const newPost = {
@@ -27,17 +28,20 @@ function PostForm({ onAddPost }) {
 
         <form onSubmit={handleSubmit} className="post-form">
             
-            <textarea value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
-            rows="1"/>
             <textarea
+                className="post-title-input"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Title"
+                rows="1"/>
+            <textarea
+                className="post-content-input"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Body text"
                 rows="3"
             />
-            <button type="submit">Post</button>
+            <button className="post-submit-button" type="submit">Post</button>
         </form>
     );
 }
