@@ -1,22 +1,105 @@
-
-
-
 .post{
     color: var(--color-neutral-content);
     background-color: var(--color-neutral-background);
     border: 1px solid var(--color-tone-5);
     border-radius: 8px;
     padding: 16px;
+    background-color: #1a1a1a;
 }
 
-.button {
-    border-radius: 8px;
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.post-content {
+    margin-bottom: 12px;
+    display : flex;
+}
+.post-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+a {
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.post-votes {
+    border-radius: 100px;
     border: 1px solid transparent;
-    padding: 0.6em 1.2em;
+    padding: 0.4em 1.2em;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #2a2a2a;
     cursor: pointer;
     transition: border-color 0.25s;
+}
+.post-upvote-button {
+    border-radius: 100px;
+    border: 1px solid transparent;
+    
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.post-upvote-button:hover {
+    color: #147209;
+    border-color: #147209;
+    background-color: #32ff04;
+}
+
+.post-downvote-button {
+    border-radius: 100px;
+    border: 1px solid transparent;
+    
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #2a2a2a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.post-downvote-button:hover {
+    color: #13237b;
+    border-color: #13237b;
+    background-color: #00ddff;
+}
+
+.post-delete {
+    border-radius: 100px;
+    border: 1px solid transparent;
+    padding: 0.4em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #2a2a2a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.post-delete-button {
+    border-radius: 100px;
+    border: 0px solid transparent;
+    
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #2a2a2a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.post-delete-button:hover {
+    color: #7b1313;
+    text-decoration: none;
 }
